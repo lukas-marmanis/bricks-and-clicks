@@ -7,7 +7,7 @@ class Article < ApplicationRecord
   # Custom as_json method to format the JSON response
   def as_json(options = {})
     # Call the original as_json method of ApplicationRecord to generate the initial JSON hash
-    super(except: [:created_at, :updated_at]).tap do |hash|
+    super(except: [:created_at, :updated_at]).tap do |hash  |
       # Format the published_at attribute to display only the date in 'YYYY-MM-DD' format
       hash['published_at'] = published_at.strftime('%Y-%m-%d')
     end
